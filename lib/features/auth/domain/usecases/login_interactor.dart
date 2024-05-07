@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_clean_architecture_template/core/interface/use_case.dart';
-import 'package:flutter_clean_architecture_template/core/model/custom_exception.dart';
+import 'package:flutter_clean_architecture_template/core/model/failure.dart';
 import 'package:flutter_clean_architecture_template/core/services/user_services.dart';
 import 'package:flutter_clean_architecture_template/features/auth/domain/entities/param/login_param.dart';
 import 'package:flutter_clean_architecture_template/features/auth/domain/entities/user.dart';
@@ -19,7 +19,7 @@ class LoginInteractor
       final res = await userRepository.login(param);
       await userServices.saveUser(res);
       return Right(res);
-    } on CustomException catch (e) {
+    } on ServerFailure catch (e) {
       return Left(e.message);
     } catch (e) {
       return Left(e.toString());

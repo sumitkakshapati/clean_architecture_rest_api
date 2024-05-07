@@ -51,12 +51,7 @@ dependencies:
   hive: ^2.2.3
 
   # Api Connection
-  ferry: ^0.15.0+1
-  gql_http_link: ^1.0.1+1
-  gql_error_link: ^1.0.0+1
-  gql_transform_link: ^1.0.0
-  gql_link: ^1.0.0+1
-  gql_exec: ^1.0.0+1
+  dio: ^5.4.3+1
 
   # Function Programming
   dartz: ^0.10.1
